@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'examples';
+  months = ["Jan","Feb","Mar","April","May","Jun","Jul","Aug","Sep","Oct"]
+  newMonth: string
+  addMonth()
+  {
+      this.months.push(this.newMonth);    
+  }
+
+  deleteMonth(month)
+  {
+    let index = this.months.indexOf(month)
+    this.months.splice(index,1)
+  }
 }
